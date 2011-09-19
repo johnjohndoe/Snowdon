@@ -1,5 +1,4 @@
-/* Copyright 2011 Ashley J.D. Manton
- * Licensed under the Apache License, Version 2.0 (the "License");
+/* Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  * 
@@ -31,10 +30,6 @@ public class DataUtilities {
 	 * @return Two-dimensional float array containing binned data.
 	 */
 	public static float[][] binFloatFloatArray(float[][] data, float binWidth, float minX, float maxX) {
-		// TODO: Remove
-		long startTime = System.currentTimeMillis();
-		System.out.println("AJDM: Binning started at: " + startTime);
-		
 		if (binWidth == 0) {
 			return data;
 		} else {
@@ -85,11 +80,6 @@ public class DataUtilities {
 				filteredBinnedData[0][i] = filteredBinnedX.get(i);
 				filteredBinnedData[1][i] = filteredBinnedY.get(i);
 			}
-			
-			// TODO: Remove
-			long endTime = System.currentTimeMillis();
-			System.out.println("AJDM: Binning ended at: " + endTime);
-			System.out.println("AJDM: Binning time: " + (endTime - startTime));
 
 			return filteredBinnedData;
 		}
