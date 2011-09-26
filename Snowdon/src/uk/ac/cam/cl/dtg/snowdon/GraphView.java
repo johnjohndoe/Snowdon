@@ -315,6 +315,9 @@ public abstract class GraphView extends View {
     	if(!Float.isNaN(maxX)) mMaxX = maxX;
     	if(!Float.isNaN(minY)) mMinY = minY;
     	if(!Float.isNaN(maxY)) mMaxY = maxY;
+    	
+    	mDataXWidth = mMaxX - mMinX;
+    	mDataYHeight = mMaxY - mMinY;
     }
     
 	/**
