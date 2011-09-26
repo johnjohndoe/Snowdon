@@ -101,8 +101,10 @@ public class HistogramGraphView extends GraphView {
 				} else if (Float.isNaN(mData[set][1][i]) && Float.isNaN(mData[set][1][i + 1]) == false) {
 					mLinePath.moveTo(coords[0], mTopPadding + graphHeight);
 					mLinePath.lineTo(coords[0], coords[3]);
+					mLinePath.lineTo(coords[2], coords[3]);
 					mGradientPath.lineTo(coords[0], mTopPadding + graphHeight);
 					mGradientPath.lineTo(coords[0], coords[3]);
+					mGradientPath.lineTo(coords[2], coords[3]);
 				} else if (coords[3] < coords[1]) {				// If the data is increasing, draw in the ascending style...
 					drawAscendingSection(canvas, coords);
 				} else {										// ...otherwise, draw in the descending style
