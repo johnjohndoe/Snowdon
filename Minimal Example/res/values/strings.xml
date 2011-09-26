@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Snowdon Example</string>
+    
+    <!-- This is necessary as a work-around to ensure the custom XML attributes for the graph layout can be used in the project -->
+    <string name="NS">http://schemas.android.com/apk/res/uk.ac.cam.cl.dtg.snowdon.examples</string>
+</resources>
