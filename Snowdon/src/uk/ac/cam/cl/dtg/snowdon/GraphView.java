@@ -118,7 +118,7 @@ public abstract class GraphView extends View {
         
         // TODO: Use an ArrayList of overlays or something, so that we can have as many different ones as we want. Reading from XML for all of them may be difficult to implement, though.
         mDrawOverlay1 = attributes.getAttributeBooleanValue(customSchemaLocation, "graph_draw_overlay1", false);
-        mOverlay1Paint.setColor(attributes.getAttributeIntValue(customSchemaLocation, "graph_overlay1_colour", 0xFF000000));
+        mOverlay1Paint.setColor(attributes.getAttributeIntValue(customSchemaLocation, "graph_overlay1_colour", 0xFFffffff));
         mOverlay1Text = attributes.getAttributeValue(customSchemaLocation, "graph_overlay1_text");
         if (mOverlay1Text == null) mOverlay1Text = "";
         mOverlay1TextSize = attributes.getAttributeFloatValue(customSchemaLocation, "graph_overlay1_text_size", 40.0f);
@@ -128,7 +128,7 @@ public abstract class GraphView extends View {
         mOverlay1YPos = attributes.getAttributeFloatValue(customSchemaLocation, "graph_overlay1_y_pos", 0.25f);
         
         mDrawOverlay2 = attributes.getAttributeBooleanValue(customSchemaLocation, "graph_draw_overlay2", false);
-        mOverlay2Paint.setColor(attributes.getAttributeIntValue(customSchemaLocation, "graph_overlay2_colour", 0xFF000000));
+        mOverlay2Paint.setColor(attributes.getAttributeIntValue(customSchemaLocation, "graph_overlay2_colour", 0xFFffffff));
         mOverlay2Text = attributes.getAttributeValue(customSchemaLocation, "graph_overlay2_text");
         if (mOverlay2Text == null) mOverlay2Text = "";
         mOverlay2TextSize = attributes.getAttributeFloatValue(customSchemaLocation, "graph_overlay2_text_size", 40.0f);
@@ -619,6 +619,7 @@ public abstract class GraphView extends View {
 	 */
     public void setOverlay1Text(String text) {
         mOverlay1Text = text;
+        mDrawOverlay1 = true;
     }
     
 	/**
@@ -629,6 +630,7 @@ public abstract class GraphView extends View {
 	 */
 	public void setOverlay2Text(String text) {
 		mOverlay2Text = text;
+		mDrawOverlay2 = true;
 	}
 
     /**
@@ -643,6 +645,7 @@ public abstract class GraphView extends View {
      */
     public void setOverlay1Text(String text, float overlayXPos, float overlayYPos) {
         mOverlay1Text = text;
+        mDrawOverlay1 = true;
         mOverlay1XPos = overlayXPos;
         mOverlay1YPos = overlayYPos;
     }
@@ -661,6 +664,7 @@ public abstract class GraphView extends View {
 	 */
     public void setOverlay2Text(String text, float overlayXPos, float overlayYPos) {
         mOverlay2Text = text;
+        mDrawOverlay2 = true;
         mOverlay2XPos = overlayXPos;
         mOverlay2YPos = overlayYPos;
     }
